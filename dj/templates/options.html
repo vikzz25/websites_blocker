@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WebSiteBLocker</title>
+        <link rel="stylesheet" href="{% static './style.css' %}">
+        <link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+    </head>
+    <style>
+        .cta{
+            margin: 100px auto;
+            width: 80%;
+            background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url({% static './images/7854.jpg' %});
+            background-position: center;
+            background-size: cover;
+            border-radius: 10px;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .container-p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            /* background-color: red;s */
+            display: flex;
+        }
+        
+.btn-p {
+    /* font-family: 'Oswald', sans-serif; */
+    font-family: 'Saira', sans-serif;
+    display: block;
+    margin: 40px 20px;
+    margin-bottom: 0px;
+    font-size: 1.2rem;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 7px;
+    width: 200px;
+    color: white;
+}
+
+
+.header {
+
+    min-height: 100vh;
+    width: 100%;
+    background: url({% static './images/7854.jpg' %});
+
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.header:before{
+    content: ' ';
+    position: absolute;
+    top: 0px;
+    left:0px;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 40%;
+    z-index: 0;
+    
+}
+a.nav-link:link
+{
+   color: white;
+   text-decoration: none;
+}
+a.nav-link:visited
+{
+   color: white;
+   text-decoration: none;
+}
+a.nav-link:hover
+{
+   color: white;
+   text-decoration: none;
+}
+a.nav-link:active
+{
+   color: white;
+   text-decoration: none;
+}
+
+    </style>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img class="img-div" src="{% static './images/Logoo.png' %}"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="./About">ABOUT</a></li>
+                    {% if user.is_authenticated%}
+                    <li><a href="./logoutuser">LOGOUT</a></li>
+                    {%else%}
+                    <li><a href="./Login">LOGIN</a></li>
+                    <li><a href="./register">SIGN UP</a></li>
+                    {% endif %}
+                    <li><a href="./contact">CONTACT</a></li>
+
+                </ul>
+            </div>
+        </nav>
+        <form method="post"  required>
+            {% csrf_token %}
+    <div class="container-p">
+    
+        <button class="btn-p"><a href="./block" class="nav-link">BLOCK</a></button>
+        <button class="btn-p"><a href="./unblock" class="nav-link">UNBLOCK</a></button>
+        <button class="btn-p"><a href="./block_entry" class="nav-link">BLOCK SITE</a></button>
+        <button class="btn-p"><a href="./unblock_entry" class="nav-link">UNBLOCK SITE</a></button>
+        <button class="btn-p" action="/clearing" class="nav-link">UNBLOCK ALL</button>
+    
+    </div>
+    </body>
+
+    </html>

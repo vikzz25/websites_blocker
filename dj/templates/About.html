@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSiteBLocker</title>
+    <link rel="stylesheet" href="{% static './style.css' %}">
+    <link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<style>
+    .Subheader{
+        height: 50vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url({% static './images/background.jpg' %});
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+        color: #fff;
+    }
+    .Subheader h1{
+        margin-top: 100px;
+    }
+    .red-btn{
+        border: 1px solid #f44336;
+        background: transparent;
+        color: #f44336;
+    }
+    
+    .red-btn:hover{
+        color: #fff;
+    }
+    
+    .hero-btn {
+        display: inline-block;
+        text-decoration: none;
+        color: rgba(243, 16, 16, 0.836);
+        border: 1px solid rgb(15, 0, 0);
+        padding: 12px 34px;
+        font-size: 13px;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .hero-btn:hover {
+        border: 1px solid #f44336;
+        background: #f44336;
+        transition: 1s;
+    }
+    
+</style>
+
+<body>
+
+    
+
+    <section class="Subheader">
+        <nav>
+            <a href="index.html"><img class="img-div" src="{% static './images/Logoo.png' %}"></a>
+            <div class="nav-links">
+                <!-- <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">LOGIN</a></li>
+                    <li><a href="">REGISTER</a></li>
+                    <li><a href="">CONTACT</a></li>
+
+                </ul> -->
+            </div>
+        </nav>
+       <h1>About us</h1>
+    </section>
+ 
+    
+
+         <!-- <---------About us content ----------> 
+
+            <section class="about-us">
+                
+                <div class="row">
+                    <div class="about-col">
+                        <h1>Trifecta</h1>
+                        <P>In this mini project we are going to create website for blocking sites. Using this website, 
+                            a system’s owner can block any site which he doesn’t wants to be accessed by the end user. 
+                            This website can be used to block the website so that the end user cannot open restricted sites 
+                            on the specific duration. Due to this the productivity of the industry/end user will increase. 
+                            Also, by using this site a parent can also block the sites for his child which can distract them.</P>
+                        <a href="./register.html" class="hero-btn red-btn">Register Now</a>
+                    </div>
+                    <div class="about-col">
+                        <img src="{% static './images/About.jpg' %}">
+                    </div>
+                </div>
+            </section>
+
+                <!-- <----------Footer--------
+
+        <section class="footer">
+            <h4>About us</h4>
+            <p>The site is been developed and Handeled by the students of Sanjivani College of Engineering, Kopargaon.
+
+        </section> -->
+
+</body>
+
+</html>

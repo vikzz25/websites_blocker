@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <script
+      src="https://kit.fontawesome.com/7cd4e60cf6.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link rel="stylesheet" href="index.css" /> -->
+    <style>
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+.container-p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    /* background-color: red;s */
+}
+
+body::before {
+  content: ' ';
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  top: 0px;
+  background-image: url({% static './images/7854.jpg' %});
+  opacity: 50%;
+}
+
+body {
+    background-color: black;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.6rem;
+}
+
+h1 {
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+}
+
+.box-p {
+    border-bottom: 2px solid white;
+    margin: 22px 0px;
+    /* border: 2px solid white;/ */
+}
+
+.box-p input {
+    font-family: 'Saira', sans-serif;
+    background: none;
+    width: 70%;
+    color: white;
+    margin: 10px 0px;
+    outline: none;
+    font-size: 1.2rem;
+    border: none;
+    margin-left: 10px;
+    padding: 5px 0px;
+    /* box-sizing: border-box; */
+    margin-bottom: 0px;
+
+}
+
+.btn-p {
+    /* font-family: 'Oswald', sans-serif; */
+    font-family: 'Saira', sans-serif;
+    display: block;
+    margin: 40px 0px;
+    margin-bottom: 0px;
+    width: 50%;
+    font-size: 1.2rem;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 7px;
+    margin: auto;
+}
+
+.btn-p:hover {
+    opacity: 70%;
+    color: black;
+    background-color: white;
+}
+    </style>
+  </head>
+  <body>
+    <!-- <i class="fa fa-user la"></i> -->
+    <form method="post"  required>
+      {% csrf_token %}
+    <div class="container-p">
+      <h1>Contact Us</h1>
+      <br>
+      <br>
+      <br>
+
+      <div class="box-p">
+<p>Email - websiteblocker01@gmail.com</p>
+      </div> 
+      <div class="box-p">
+        <p>Shashank - 7030522794</p>
+              </div> 
+      <div class="box-p">
+        <p>Sanket - 8379818065</p>
+              </div> 
+      <div class="box-p">
+        <p>Vikas - 9370520892</p>
+              </div> 
+    </div>
+  </form>
+  </body>
+</html>

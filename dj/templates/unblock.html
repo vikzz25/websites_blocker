@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unblock</title>
+    <script src="https://kit.fontawesome.com/7cd4e60cf6.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
+
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+.container-p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    /* background-color: red;s */
+}
+
+body::before {
+    content: ' ';
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    top: 0px;
+    background-image: url({% static './images/7854.jpg' %});
+    opacity: 50%;
+}
+
+body {
+    background-color: black;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.6rem;
+}
+
+h1 {
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+}
+
+.box-p {
+    border-bottom: 2px solid white;
+    margin: 22px 0px;
+    /* border: 2px solid white;/ */
+    display: flex;
+    align-items: center;
+}
+
+.box-p input {
+    font-family: 'Saira', sans-serif;
+    background: none;
+    width: 70%;
+    color: white;
+    margin: 10px 0px;
+    outline: none;
+    font-size: 1.2rem;
+    border: none;
+    margin-left: 10px;
+    padding: 5px 0px;
+    /* box-sizing: border-box; */
+    margin-bottom: 0px;
+
+}
+
+.btn-p {
+    /* font-family: 'Oswald', sans-serif; */
+    font-family: 'Saira', sans-serif;
+    display: block;
+    width: 40%;
+    font-size: 1.2rem;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 7px;
+}
+.btn-c{
+    margin: auto;
+    width: 60%;
+
+}
+
+.btn-p:hover,.btn-c a:hover {
+    opacity: 70%;
+    color: black;
+    background-color: white;
+}
+.btn-c a{
+    color: white;
+    text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+    	
+
+<div class="container-p">
+<form method="post" action="/unblock" required>
+    {% csrf_token %}
+    {% comment %} <div class="box-p">	
+        <input type="user" name="blocked" id="blocked" placeholder="Enter Site to block">
+        <button class="btn-p">Block Site</button>
+    </div> {% endcomment %}
+
+    <div class="box-p">
+        <input type="user" name="unblocked" id="unblocked" placeholder="Enter Site to unblock">
+        <button class="btn-p">Unblock site</button>
+    </div>
+</form>
+</div>
+</body>
+</html>

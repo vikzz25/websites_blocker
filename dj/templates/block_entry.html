@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+<body>
+<table border="1">
+  
+    <tr>
+      <th>Sr.NO.</th>
+      <th>Website Name</th>
+      <th>Bloked Date</th>
+      <th>Bloked Time</th>
+    </tr>
+    {% for task in Btasks %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{task.blocked}}</td>
+        <td>{{task.date}}</td>
+        <td>{{task.time}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+</body>
+</html>

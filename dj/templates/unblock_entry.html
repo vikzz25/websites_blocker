@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+<body>
+    <h1>Unbloked Info</h1>
+    <table border="1">
+      <tr>
+        <th>Sr.NO.</th>
+        <th>Unbloked Website Name</th>
+        <th>Unbloked Date</th>
+        <th>Unbloked Time</th>
+      </tr>
+      {% for task in Utasks %}
+      
+      <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{task.unblocked}}</td>
+          <td>{{task.date}}</td>
+          <td>{{task.time}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+</body>
+</html>

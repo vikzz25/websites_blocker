@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <script
+      src="https://kit.fontawesome.com/7cd4e60cf6.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link rel="stylesheet" href="index.css" /> -->
+    <style>
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+.container-p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    /* background-color: red;s */
+}
+
+body::before {
+  content: ' ';
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  top: 0px;
+  background-image: url({% static './images/7854.jpg' %});
+  opacity: 50%;
+}
+
+body {
+    background-color: black;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.6rem;
+}
+
+h1 {
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+}
+
+.box-p {
+    border-bottom: 2px solid white;
+    margin: 22px 0px;
+    /* border: 2px solid white;/ */
+}
+
+.box-p input {
+    font-family: 'Saira', sans-serif;
+    background: none;
+    width: 70%;
+    color: white;
+    margin: 10px 0px;
+    outline: none;
+    font-size: 1.2rem;
+    border: none;
+    margin-left: 10px;
+    padding: 5px 0px;
+    /* box-sizing: border-box; */
+    margin-bottom: 0px;
+
+}
+
+.btn-p {
+    /* font-family: 'Oswald', sans-serif; */
+    font-family: 'Saira', sans-serif;
+    display: block;
+    margin: 40px 0px;
+    margin-bottom: 0px;
+    width: 50%;
+    font-size: 1.2rem;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 7px;
+    margin: auto;
+
+}
+.btn-p a{
+  color: WHITE;
+  text-decoration: none ;
+}
+.btn-p a:hover  {
+  text-decoration: underline;
+}
+    </style>
+  </head>
+  <body>
+    <!-- <i class="fa fa-user la"></i> -->
+    <form method="post"  required>
+      {% csrf_token %}
+    <div class="container-p">
+      <h1>Sign Up</h1>
+      <div class="box-p">
+        <i class="fa fa-user-circle"></i>
+        <input
+          type="name"
+          name="username"
+          id="username"
+          placeholder="Enter Your Username"
+        />
+      </div>
+      <div class="box-p">
+        <i class="fa fa-user-circle"></i>
+        <input
+          type="text"
+          name="fname"
+          id="fname"
+          placeholder="Enter Your First Name"
+        />
+      </div>
+      <div class="box-p">
+        <i class="fa fa-user-circle"></i>
+        <input
+          type="text"
+          name="lname"
+          id="lname"
+          placeholder="Enter Your Last Name"
+        />
+      </div>
+      <div class="box-p">
+        <i class="fa fa-envelope"></i>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your Email"
+        />
+      </div>
+      <div class="box-p">
+        <i class="fa fa-key"></i>
+        <input
+          type="password"
+          name="pass1"
+          id="pass1"
+          placeholder="Create Password"
+        />
+      </div>
+      <div class="box-p">
+        <i class="fa fa-key"></i>
+        <input
+          type="password"
+          name="pass2"
+          id="pass2"
+          placeholder="Confirm Password"
+        />
+      </div>
+      <button  class="btn-p">Sign Up</button>
+    </div>
+  </form>
+  </body>
+</html>
